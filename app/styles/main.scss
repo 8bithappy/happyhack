@@ -5,5 +5,57 @@ body {
   font-family: Helvetica, sans-serif;
   color: $font-color--dark;
   background-color: $background--light;
-  padding: $half-space;
+  padding: 0;
+}
+
+//Page 1
+
+.logo {
+    text-align: center;
+    padding-top: $half-space;
+    padding-bottom: $half-space;
+    border-bottom: 1px solid #ededf1;
+}
+
+.title{
+    font-size: $font-size--lg;
+    line-height: initial;
+    margin-top: $full-space*2;
+    margin-bottom: $half-space;
+    color: $title-green;
+    text-align: center;
+}
+
+.store-list {
+    margin: 0 auto;
+    border-top: 1px solid #eaeaee;
+    border-radius: 4px;
+    background: white;
+    box-shadow: 0 1px 1px 0 #c8c8d3;
+    width: 360px;
+    height: auto;
+    padding: $half-space;
+    background: $green-bg;
+    ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        overflow-y: scroll;
+        height: 172px;
+    }
+    button[type=submit]{
+        margin: 0 auto;
+        margin-top: $half-space;
+        display: block;
+        background: $red;;
+        border: 1px solid $red;
+        color: $font-color--light;
+    }
+}
+
+.store-item {
+    padding: 10px $half-space;
+    background: #fff;
+    border-bottom: 1px solid #ededf1;
+    font-size: $font-size--md;
 }
