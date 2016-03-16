@@ -7,3 +7,70 @@ body {
   background-color: $background--light;
   padding: $half-space;
 }
+/* compare table */
+a {
+	color:$font-color--dark;
+}
+.tab-list li.active {
+	background:$green-light;
+}.tab-list li.active:hover {
+	background:$green-light;
+}
+.nav-tabs>li.active>a,
+.nav-tabs>li.active>a:focus,
+.nav-tabs>li.active>a:hover {
+	color: $font-color--light;
+    cursor: pointer;
+    background-color: $green-light;
+    border: 1px solid #ddd;
+    border-bottom-color: transparent;
+}
+.wrapper {
+	width:980px;
+	margin:0 auto;
+	background-color:$background--white;
+}
+// .tab-list {
+// 	background-color: $background--white;
+// }
+.tab-list li:active{ 
+	background-color:$green-light;
+	color:$font-color--light;
+}
+// .tab-list li a{ 
+// 	color:$font-color--light;
+// }
+#logo{
+	margin:0 auto;
+	width:300px;
+}
+.pick-store {
+	margin-top:25px;
+	margin-bottom:25px;
+}
+.pick-store label {
+	background-color: $green-light;
+	color:$font-color--light;
+	padding: $half-space - 15 $half-space;
+}
+.pick-store input, 
+.pick-store select {
+	padding: ($half-space - 16) $padding-size;
+	margin-left: -5px;
+}
+.pick-store select {
+	width:150px;
+	height:31px;
+	display:inline-block;
+}
+table {
+	background-color: $background--white;
+}
+table > thead > tr.header{
+	background-color: $green-light;
+	color:$font-color--light;
+}
+table > thead > tr{
+	background-color: $green-light;
+	color:$font-color--gray;
+}
