@@ -1,6 +1,8 @@
 
 <div id="logo">
-	<img src="../images/logo-dark-green.svg" alt="logo" width="250" height="150">
+	<a href="/page1">
+    <img src="../images/logo-dark-green.svg" alt="logo" width="250" height="150">
+  </a>
 </div>
 <div class="wrapper">
 	<ul class="nav nav-tabs tab-list">
@@ -31,7 +33,7 @@
                     <tr ng-repeat="i in currentCart.line_items">
                       <th>{{$index}}</th>
                       <td>{{i.variant.name}}</td>
-                      <td>{{i.price}}</td>
+                      <td>{{i.price | number}}</td>
                       <td>{{i.quantity}}</td>
                     </tr>
                   </tbody>
@@ -49,7 +51,7 @@
             </div>
             
             <div class="table-list">
-              <p class="total-price">Total Price: {{newSum}}$</p>
+              <p class="total-price">Total Price: Rp{{newSum | number}}</p>
               <table class="table table-bordered">
                 <thead>
                   <tr class="header">
@@ -62,7 +64,7 @@
               <tr ng-repeat="i in newOne">
                   <th ng-class="!i.price ? 'disable-td' : ''">{{$index}}</th>
                   <td ng-class="!i.price ? 'disable-td' : ''">{{i.variants[0].name}}</td>
-                  <td ng-class="!i.price ? 'disable-td' : (compareStuff(i, $index) ? 'highlight-green' : 'highlight-red')">{{i.price}}</td>
+                  <td ng-class="!i.price ? 'disable-td' : (compareStuff(i, $index) ? 'highlight-green' : 'highlight-red')">{{i.price | number}}</td>
                 </tr>
                 </tbody>
               </table>
