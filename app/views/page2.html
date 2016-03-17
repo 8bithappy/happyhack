@@ -28,23 +28,11 @@
                     </tr>
                   </thead>
                   <tbody>
-                    <tr>
-                      <th>1</th>
-                      <td>water</td>
-                      <td>10$</td>
-                      <td>2</td>
-                    </tr>
-                    <tr>
-                      <th>2</th>
-                      <td>Orange</td>
-                      <td>10$</td>
-                      <td>2</td>
-                    </tr>
-                    <tr>
-                      <th>3</th>
-                      <td>Banana</td>
-                      <td>10$</td>
-                      <td>2</td>
+                    <tr ng-repeat="i in currentCart.line_items">
+                      <th>{{$index}}</th>
+                      <td>{{i.variant.name}}</td>
+                      <td>{{i.price}}</td>
+                      <td>{{i.quantity}}</td>
                     </tr>
                   </tbody>
                 </table>
