@@ -141,11 +141,9 @@ table > thead > tr{
 
 
 .highlight-red {
-    // background-color: red;
     -webkit-animation: pulseRed 0.5s infinite alternate;
 }
 .highlight-green {
-    background-color: green;
     -webkit-animation: pulseGreen 1s infinite alternate;
 }
 td {
@@ -162,11 +160,11 @@ td {
 @-webkit-keyframes pulseRed {
       0% {background-color: white;}
      100% {background-color: red;}
-      0% {background-color: white;}
+      // 0% {background-color: white;}
 }
 
 @-webkit-keyframes pulseGreen {
       0% {background-color: white;}
      100% {background-color: green;}
-      0% {background-color: white;}
+      // 0% {background-color: white;}
 }
