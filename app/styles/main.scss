@@ -131,4 +131,9 @@ table > thead > tr{
     background: #fff;
     border-bottom: 1px solid #ededf1;
     font-size: $font-size--md;
+    cursor: pointer;
+}
+
+.selected-item {
+    background-color: red;
 }

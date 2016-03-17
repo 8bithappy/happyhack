@@ -13,18 +13,13 @@
         
         <h1 class="title">Select a store</h1>
         
+        {{lala}}
         <div class="store-list">
             <ul>
-                <li class="store-item">Store 1</li>
-                <li class="store-item">Store 2</li>
-                <li class="store-item">Store 3</li>
-                <li class="store-item">Store 4</li>
-                <li class="store-item">Store 5</li>
-                <li class="store-item">Store 6</li>
-                <li class="store-item">Store 7</li>
+                <li class="store-item" ng-class="{'selected-item': c.selected === true}" ng-repeat="c in carts | orderBy: -'updated_at' track by c.id" ng-click="chooseCart(c);">{{c.id}} <span class="text-muted">{{toDate(c.updated_at);}}</span></li>
             </ul>
             
-            <button type="submit" class="btn btn-success btn-lg">Start compare</button>
+            <button type="submit" class="btn btn-success btn-lg" ng-click="processPage1();">Start compare</button>
         </div>
         
     </section>

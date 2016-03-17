@@ -1,10 +1,41 @@
-function ExampleCtrl() {
+import _ from 'lodash';
 
-  // ViewModel
-  const vm = this;
+function ExampleCtrl(ExampleService, $scope, $location) {
+  'ngInject';
 
-  vm.title = 'AngularJS, Gulp, and Browserify! Written with keyboards and love!';
-  vm.number = 1234;
+  ExampleService.login().then((data) => {
+    console.log(data);
+    $scope.user = data;
+    ExampleService.getCarts($scope.user.token).then((data) => {
+      console.log(data);
+      $scope.carts = data.orders;
+      $scope.$apply();
+    }, (err) => {
+      console.log(err);
+    });
+  }, (err) => { console.log(err); });
+
+
+  $scope.toDate = function(date) {
+    var d = new Date(date);
+    return (d.getFullYear() + '-' + d.getMonth() + '-' + d.getDate());
+  };
+
+  $scope.chooseCart = function(obj) {
+    if (!obj.selected) {
+      obj.selected = true;
+    } else {
+      obj.selected = false;
+    }
+
+    console.log(obj.selected);
+  };
+
+  $scope.processPage1 = function() {
+    var cartIndex = _.findIndex($scope.carts, {'selected': true});
+    console.log(cartIndex);
+    $location.path('/page2');
+  };
 
 }
 
