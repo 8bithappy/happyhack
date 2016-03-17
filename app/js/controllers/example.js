@@ -22,7 +22,12 @@ function ExampleCtrl(ExampleService, DataService, $scope, $location) {
 
   $scope.toDate = function(date) {
     var d = new Date(date);
-    return (d.getFullYear() + '-' + d.getMonth() + '-' + d.getDate());
+    // return (d.getFullYear() + '-' + d.getMonth() + '-' + d.getDate());
+    var min = d.getMinutes();
+    if( min < 10 ){
+      min = '0'+d.getMinutes();
+    }
+    return ( d.getDate() + '/' + d.getMonth() + '/' + d.getFullYear() + ' ' + d.getHours() + ':'+ min );
   };
 
   $scope.chooseCart = function(obj) {
