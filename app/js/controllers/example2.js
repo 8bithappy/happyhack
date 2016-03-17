@@ -18,7 +18,7 @@ function ExampleCtrl2(ExampleService, DataService, $scope) {
   $scope.currentStoreName = $scope.currentCart.line_items[0].stock_location.name;
   // console.log($scope.currentStore);
   $scope.listOfAvailableStore = [];
-  $scope.selectedStoreId;
+  $scope.selectedStoreId = "please select stoe to compare";
 
   ExampleService.getStoresInArea($scope.lala.user.token, $scope.currentStoreSubDistrict).then((data) => {
     console.log(data);
