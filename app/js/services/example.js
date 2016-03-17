@@ -52,6 +52,17 @@ function ExampleService($http, $base64) {
     });
   };
 
+  service.search = function(token, stockID, string) {
+    return new Promise((resolve, reject) => {
+      $http.defaults.headers.common['X-Spree-Token'] = token;
+      $http.get('https://api.happyfresh.com/api/stock_locations/' + stockID + '/products/search?q=' + string).success((data) => {
+        resolve(data.products[0]);
+      }).error((err, status) => {
+        reject(err, status);
+      });
+    });
+  };
+
   return service;
 
 }

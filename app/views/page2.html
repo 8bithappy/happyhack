@@ -45,37 +45,25 @@
                 <option ng-repeat="as in listOfAvailableStore" value="{{as.id}}">{{as.name}}</option>
               </select>
               <span> Store Id: {{selectedStoreId}}</span>
+              <button ng-click="hehehe();">Compare</button>
             </div>
+            
             <div class="table-list">
-              <p class="total-price">Total Price: 50$</p>
+              <p class="total-price">Total Price: {{newSum}}$</p>
               <table class="table table-bordered">
                 <thead>
                   <tr class="header">
                     <th>Stt</th>
                     <th>Name</th>
                     <th>Price</th>
-                    <th>Quantity</th>
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
-                    <th>1</th>
-                    <td>water</td>
-                    <td>10$</td>
-                    <td>2</td>
-                  </tr>
-                  <tr>
-                    <th>2</th>
-                    <td>Orange</td>
-                    <td>10$</td>
-                    <td>2</td>
-                  </tr>
-                  <tr>
-                    <th>3</th>
-                    <td>Banana</td>
-                    <td>10$</td>
-                    <td>2</td>
-                  </tr>
+              <tr ng-repeat="i in newOne">
+                  <th ng-class="!i.price ? 'disable-td' : ''">{{$index}}</th>
+                  <td ng-class="!i.price ? 'disable-td' : ''">{{i.variants[0].name}}</td>
+                  <td ng-class="!i.price ? 'disable-td' : (compareStuff(i, $index) ? 'highlight-green' : 'highlight-red')">{{i.price}}</td>
+                </tr>
                 </tbody>
               </table>
             </div>
