@@ -40,6 +40,18 @@ function ExampleService($http, $base64) {
     });
   };
 
+  // get all carts
+  service.getStoresInArea = function(token, store) {
+    return new Promise((resolve, reject) => {
+      $http.defaults.headers.common['X-Spree-Token'] = token;
+      $http.get('https://api.happyfresh.com/api/sub_districts/' + store + '/stock_locations').success((data) => {
+        resolve(data);
+      }).error((err, status) => {
+        reject(err, status);
+      });
+    });
+  };
+
   return service;
 
 }

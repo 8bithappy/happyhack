@@ -41,12 +41,10 @@
           <div class="col-md-6">
             <div class="other-store">
               <label for="other-store">Other Store</label>
-              <select name="other-store" class="form-control" id="other-store">
-                <option value="">Store 1</option>
-                <option value="">Store 2</option>
-                <option value="">Store 3</option>
-                <option value="">Store 4</option>
+              <select name="other-store" class="form-control" id="other-store" ng-model="selectedStoreId">
+                <option ng-repeat="as in listOfAvailableStore" value="{{as.id}}">{{as.name}}</option>
               </select>
+              <span> Store Id: {{selectedStoreId}}</span>
             </div>
             <div class="table-list">
               <p class="total-price">Total Price: 50$</p>
