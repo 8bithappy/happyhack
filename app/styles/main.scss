@@ -141,10 +141,12 @@ table > thead > tr{
 
 
 .highlight-red {
-    -webkit-animation: pulseRed 0.5s infinite alternate;
+    -webkit-animation: pulseRed 0.1s infinite alternate;
+    font-weight: bold;
 }
 .highlight-green {
-    -webkit-animation: pulseGreen 1s infinite alternate;
+    -webkit-animation: pulseGreen 2s infinite alternate;
+    font-style: italic;
 }
 td {
     -webkit-transition: 1s linear all;
