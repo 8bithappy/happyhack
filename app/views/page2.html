@@ -14,10 +14,10 @@
           <div class="col-md-6">
             <div class="current-store">
               <label for="current-store">Current Store</label>
-              <input type="text" value="first store" id="current-store">
+              <input type="text" value="first store" id="current-store" readonly ng-model="currentCart.id">
             </div> 
              <div class="table-list">
-                <p class="total-price">Total Price: 50$</p>
+                <p class="total-price">Total Price: {{currentCart.display_total}}</p>
                 <table class="table table-bordered">
                   <thead>
                     <tr class="header">
