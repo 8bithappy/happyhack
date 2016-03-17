@@ -1,14 +1,18 @@
 import _ from 'lodash';
 
-function ExampleCtrl(ExampleService, $scope, $location) {
+function ExampleCtrl(ExampleService, DataService, $scope, $location) {
   'ngInject';
+
+  let vm = {};
 
   ExampleService.login().then((data) => {
     console.log(data);
     $scope.user = data;
+    vm.user = data;
     ExampleService.getCarts($scope.user.token).then((data) => {
       console.log(data);
       $scope.carts = data.orders;
+      vm.carts = data.orders;
       $scope.$apply();
     }, (err) => {
       console.log(err);
@@ -33,6 +37,8 @@ function ExampleCtrl(ExampleService, $scope, $location) {
 
   $scope.processPage1 = function() {
     var cartIndex = _.findIndex($scope.carts, {'selected': true});
+    vm.cartIndex = cartIndex;
+    DataService.set(vm);
     console.log(cartIndex);
     $location.path('/page2');
   };

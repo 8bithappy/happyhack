@@ -18,7 +18,7 @@ function OnConfig($stateProvider, $locationProvider, $urlRouterProvider) {
   })
   .state('Page2', {
     url: '/page2',
-    controller: 'ExampleCtrl as home',
+    controller: 'ExampleCtrl2 as home2',
     templateUrl: 'page2.html',
     title: 'Page2'
   });
